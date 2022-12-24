@@ -7,3 +7,6 @@ go run exercise1_6/lissajous.go > img.gif
 go run exercise1_7/fetch.go http://gopl.io
 
 go run exercise1_8/fetch.go gopl.io
+
+go run exercise1_9/fetch.go http://gopl.io
+go run exercise1_9/fetch.go http://gopl.io/notfound
