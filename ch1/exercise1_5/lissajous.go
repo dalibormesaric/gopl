@@ -1,3 +1,7 @@
+// Change the Lissajous program's color palette to green on black, for added
+// authenticity. To create the web color #RRGGBB, use color.RGBA{0xRR, 0xGG, 0xBB, 0xff},
+// where each pair of hexadecimal digits represents the intencity of the red, green, or blue
+// component of the pixel.
 package main
 
 import (
@@ -13,8 +17,8 @@ import (
 var palette = []color.Color{color.Black, color.RGBA{0x00, 0xff, 0x00, 0xff}}
 
 const (
-	blackIndex = 0
-	greenIndex = 1
+	blackIndex = 0 // first color in palette
+	greenIndex = 1 // next color in palette
 )
 
 func main() {
@@ -23,13 +27,13 @@ func main() {
 
 func lissajous(out io.Writer) {
 	const (
-		cycles  = 5
-		res     = 0.001
-		size    = 100
-		nframes = 64
-		delay   = 8
+		cycles  = 5     // number of complete x oscillator revolutions
+		res     = 0.001 // angular resolution
+		size    = 100   // image canvas covers [-size..+size]
+		nframes = 64    // number of animation frames
+		delay   = 8     // delay between frames in 10ms units
 	)
-	freq := rand.Float64() * 3.0
+	freq := rand.Float64() * 3.0 // relative frequency of y oscillator
 	anim := gif.GIF{LoopCount: nframes}
 	phase := 0.0
 	for i := 0; i < nframes; i++ {
@@ -45,5 +49,5 @@ func lissajous(out io.Writer) {
 		anim.Delay = append(anim.Delay, delay)
 		anim.Image = append(anim.Image, img)
 	}
-	gif.EncodeAll(out, &anim)
+	gif.EncodeAll(out, &anim) // NOTE: ignoring encoding errors
 }

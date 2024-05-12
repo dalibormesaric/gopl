@@ -1,6 +1,4 @@
-// The function call io.Copy(dst, src) reads from src and writes to dst. Use it
-// instead of ioutil.ReadAll to copy the response body to os.Stdout without requiring a
-// buffer large enough to hold the entire stream. Be sure to check the error result of io.Copy.
+// Fetch prints the content found at a URL.
 package main
 
 import (
@@ -17,11 +15,12 @@ func main() {
 			fmt.Fprintf(os.Stderr, "fetch: %v\n", err)
 			os.Exit(1)
 		}
-		_, err = io.Copy(os.Stdout, resp.Body)
+		b, err := io.ReadAll(resp.Body)
 		resp.Body.Close()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "fetch: reading %s: %v\n", url, err)
 			os.Exit(1)
 		}
+		fmt.Printf("%s", b)
 	}
 }
