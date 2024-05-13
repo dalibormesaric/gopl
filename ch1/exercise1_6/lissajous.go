@@ -1,4 +1,4 @@
-// Modify the Lissajous program to produce images in multiple colors by adding
+// Exercise 1.6: Modify the Lissajous program to produce images in multiple colors by adding
 // more values to palette and then displaying them by changing the thrid argument of
 // SetColorIndex in some interesting way.
 package main
