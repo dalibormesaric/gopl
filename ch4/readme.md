@@ -105,7 +105,7 @@ go run embeda.go
 go run movie.go
 ```
 
-### github (just a package used in issues)
+### github (used in issues)
 
 ### issues
 

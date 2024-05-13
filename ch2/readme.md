@@ -21,11 +21,11 @@ go run echo4.go -n a bc def
 go run echo4.go -help
 ```
 
-### tempconv0 (a package)
+### tempconv0 (package)
 
-### tempconv (a package)
+### tempconv (package)
 
-### Exercise 2.1 (a package)
+### Exercise 2.1 (package)
 
 ### cf
 
@@ -37,6 +37,6 @@ go run cf.go -40
 
 // TODO: Exercise 2.2
 
-### popcount (a package)
+### popcount (package)
 
 // TODO: Exercise 2.3, 2.4 and 2.5

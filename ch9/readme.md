@@ -7,9 +7,7 @@
 >   - avoid accessing the variable from multiple goroutines
 >   - allow many goroutines to access the variable, but only one at the time - mutual exclusion
 
-### bank1
-
-> a package
+### bank1 (package)
 
 > serial confinement
 > ``` go
